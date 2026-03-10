@@ -1,0 +1,14 @@
+diff --git a/index.js b/index.js
+index 1234567..89abcdef 100644
+--- a/index.js
++++ b/index.js
+@@ -1,5 +1,9 @@
+ 'use strict';
+-var parseUrl = require('url').parse;
++var parseUrl = function(urlString) {
++  try { return new URL(urlString); }
++  catch(e) { return {}; }
++};
+ var DEFAULT_PORTS = {
+   ftp: 21,
+   gopher: 70,

@@ -1,0 +1,15 @@
+diff --git a/index.js b/index.js
+index 1234567..89abcdef 100644
+--- a/index.js
++++ b/index.js
+@@ -14,7 +14,12 @@
+  * @private
+  */
+-var parseUrl = require('url').parse
++var parseUrl = function(url) {
++  try { return new URL(url, 'http://localhost'); }
++  catch(e) { return require('url').parse(url); }
++};
+
+ /**
+  * Parse the `req` url with memoization.

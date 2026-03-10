@@ -136,5 +136,11 @@
         "description": "Open Global URL"
       }
     }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "proxy-from-env": "patches/proxy-from-env.patch",
+      "parseurl": "patches/parseurl.patch"
+    }
   }
 }
