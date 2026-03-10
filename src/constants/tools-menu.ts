@@ -15,6 +15,7 @@ import {
   ScrollLockIcon,
   SettingsIcon,
   TagIcon,
+  ArchivistIcon,
 } from "~components/icons"
 
 /**
@@ -51,6 +52,8 @@ export const TOOLS_MENU_IDS = {
   MODEL_LOCK: "modelLock",
   CLEANUP: "cleanup",
   SETTINGS: "settings",
+  ARCHIVIST_CAPTURE: "archivistCapture",
+  SELECTIVE_EXPORT: "selectiveExport",
 } as const
 
 export type ToolsMenuId = (typeof TOOLS_MENU_IDS)[keyof typeof TOOLS_MENU_IDS]
@@ -111,6 +114,20 @@ export const TOOLS_MENU_ITEMS: ToolsMenuItem[] = [
     defaultLabel: "Cleanup",
     IconComponent: CleanupIcon,
     isDanger: true,
+    defaultVisible: true,
+  },
+  {
+    id: TOOLS_MENU_IDS.ARCHIVIST_CAPTURE,
+    labelKey: "tooltipArchivistCapture",
+    defaultLabel: "capture via Archivist",
+    IconComponent: ArchivistIcon,
+    defaultVisible: true,
+  },
+  {
+    id: TOOLS_MENU_IDS.SELECTIVE_EXPORT,
+    labelKey: "tooltipSelectiveExport",
+    defaultLabel: "selective export",
+    IconComponent: ArchivistIcon,
     defaultVisible: true,
   },
   {

@@ -1,8 +1,8 @@
 {
   "name": "ophel",
-  "displayName": "Ophel Atlas - AI 对话结构化与导航工具",
+  "displayName": "SKEIN",
   "version": "1.0.15",
-  "description": "将 AI 对话转化为可阅读、可导航、可复用的知识内容。通过实时大纲、会话文件夹与 Prompt 词库，让对话告别无限滚动，成为可组织、可沉淀的工作流，适用于高频使用 AI 的学习与工作场景。",
+  "description": "SKEIN — AI chat archivist + vault + export",
   "author": "urzeye",
   "license": "GPL-3.0-only",
   "repository": {
@@ -11,16 +11,17 @@
   },
   "packageManager": "pnpm@9.15.0",
   "scripts": {
-    "dev": "plasmo dev",
+    "dev": "plasmo dev --target=firefox-mv3",
+    "dev:firefox": "plasmo dev --target=firefox-mv3",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
-    "build": "plasmo build",
+    "build": "plasmo build --target=firefox-mv3",
     "build:firefox": "plasmo build --target=firefox-mv3",
     "build:all": "plasmo build && plasmo build --target=firefox-mv3",
-    "package": "plasmo package",
+    "package": "pnpm run package:firefox",
     "package:firefox": "plasmo package --target=firefox-mv3",
     "package:all": "plasmo package && plasmo package --target=firefox-mv3",
     "dev:userscript": "vite --config vite.userscript.config.ts",
@@ -77,13 +78,13 @@
     "vitepress": "^1.6.4"
   },
   "manifest": {
-    "name": "__MSG_extensionName__",
-    "description": "__MSG_extensionDescription__",
+    "name": "SKEIN",
+    "description": "SKEIN — Turn AI chats into navigable, searchable knowledge",
     "default_locale": "en",
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvAcJdUSu6L/pUzQoiycrhoVxXuB0urO8sVre1hOyEQ+SNbblsQ/b1E5IHiXTP4WglmvqM6Fe0CgNJBi6YxtHlWOmXv+rZ7xEMoCQAw4RdEBbm9Vf+bCwBeI9k1Pps9CcMWEE3bdBCC/z8/BcME37id56KIhSPDhifm2XM7W2AkgFRUo49nwlkNXaCkUZFSt/EMjCY30XrQ/rnltBcBZckbFxIJpIIbF8K7OScjagWaVa8MVWK/wiSJfN+sfh2La52yjhobDqHq9lLZLu6YBa8MS5MambmmpF0FnXnT6jdGiBxxwYUjg4Yy8k9fIhq8NwVshEPbWBANu7fCdV+9Ii2wIDAQAB",
     "browser_specific_settings": {
       "gecko": {
-        "id": "igodu.love@gmail.com",
+        "id": "loom@hypebrut.com",
         "strict_min_version": "109.0",
         "data_collection_permissions": {
           "required": [
@@ -94,7 +95,8 @@
     },
     "permissions": [
       "storage",
-      "declarativeNetRequestWithHostAccess"
+      "declarativeNetRequestWithHostAccess",
+      "nativeMessaging"
     ],
     "optional_permissions": [
       "notifications",

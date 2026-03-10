@@ -1,10 +1,25 @@
 {
   "extensionName": {
-    "message": "Ophel Atlas - AI Chat Organizer & Navigator",
+    "message": "Hypebrut Loom",
     "description": "Extension name"
   },
   "extensionDescription": {
     "message": "Turn AI chats into readable, navigable knowledge. Use outlines, folders, and prompts to organize your workflow and stop scrolling.",
     "description": "Extension description"
+  },
+  "archivist": {
+    "message": "Archivist"
+  },
+  "archivistCapture": {
+    "message": "Capture"
+  },
+  "selectiveExport": {
+    "message": "Selective export"
+  },
+  "archivistPipeline": {
+    "message": "Archivist pipeline"
+  },
+  "archivistApiCapture": {
+    "message": "API-first capture"
   }
 }

@@ -40,3 +40,45 @@ docs/.vitepress/dist
 
 .spec-workflow/.idea/
 .playwright-mcp
+
+# ophel-finalize
+/FINAL*.py
+/FINAL*.log
+/final*.log
+/finalize_*.txt
+/finalize_bundle.*
+/chunk_*.txt
+/unleash-repo-schema-v1-codeium-language-server.json
+/*.bak
+/*.bak.*
+/*.tmp
+/*.old
+/*.orig
+/*.rej
+
+# --- local repair artifacts (do not commit) ---
+.local_logs/
+proof.mjs
+wn-
+@@*
+# local / generated
+*.log
+*.tmp
+*.bak
+*.orig
+.env
+.env.*
+node_modules/
+.cache/
+.output/
+.turbo/
+.vite/
+.idea/
+.vscode/
+coverage/
+playwright-report/
+test-results/
+.quarantine/
+# local automation logs
+.upstream-baseline.txt
+w-

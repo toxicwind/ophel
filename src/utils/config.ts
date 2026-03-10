@@ -6,8 +6,9 @@
 // 应用名称（用于备份文件名等）
 export const APP_NAME = "ophel"
 
+import { BRAND_NAME } from "~/brand/brand"
 // 应用显示名称
-export const APP_DISPLAY_NAME = "Ophel Atlas"
+export const APP_DISPLAY_NAME = BRAND_NAME
 
 // 应用版本 - 从 manifest 自动获取，与 package.json 保持同步
 // 应用版本 - 根据平台获取

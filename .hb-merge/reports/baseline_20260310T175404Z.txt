@@ -1,0 +1,3 @@
+HEAD 7c2fbca5afc1af310cbc6cabc2b0ccc31693146a
+BRANCH repair/harden-20260310_115212
+REPO /home/toxic/workspace/ophel
