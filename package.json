@@ -1,8 +1,8 @@
 {
   "name": "ophel",
-  "displayName": "SKEIN",
+  "displayName": "Skein",
   "version": "1.0.15",
-  "description": "SKEIN — AI chat archivist + vault + export",
+  "description": "Turn AI chats into searchable knowledge",
   "author": "urzeye",
   "license": "GPL-3.0-only",
   "repository": {

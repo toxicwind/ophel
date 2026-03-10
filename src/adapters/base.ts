@@ -7,7 +7,7 @@
 import { SITE_IDS } from "~constants/defaults"
 import { DOMToolkit } from "~utils/dom-toolkit"
 
-// ==================== 类型定义 ====================
+// ==================== Type Definitions ====================
 
 export interface OutlineItem {
   level: number
@@ -104,13 +104,13 @@ export interface MarkdownFixerConfig {
   shouldSkip?: (element: HTMLElement) => boolean
 }
 
-// ==================== SiteAdapter 基类 ====================
+// ==================== SiteAdapter Base Class ====================
 
 export abstract class SiteAdapter {
   protected textarea: HTMLElement | null = null
   protected _cachedFlutterScrollContainer: HTMLElement | null = null
 
-  // ==================== 必须实现的方法 ====================
+  // ==================== Required Methods ====================
 
   /** 检测当前页面是否匹配该站点 */
   abstract match(): boolean
@@ -130,7 +130,7 @@ export abstract class SiteAdapter {
   /** 向输入框插入内容 */
   abstract insertPrompt(content: string): boolean
 
-  // ==================== 会话相关 ====================
+  // ==================== Conversation ====================
 
   /** 获取当前会话 ID */
   getSessionId(): string {
@@ -283,7 +283,7 @@ export abstract class SiteAdapter {
     }
   }
 
-  // ==================== 生成状态检测 ====================
+  // ==================== Generation Status Detection ====================
 
   /** 检测 AI 是否正在生成响应 */
   isGenerating(): boolean {
@@ -310,7 +310,7 @@ export abstract class SiteAdapter {
     return false
   }
 
-  // ==================== 页面宽度控制 ====================
+  // ==================== Page Width Control ====================
 
   /** 返回需要加宽的 CSS 选择器列表 */
   getWidthSelectors(): Array<{ selector: string; property: string }> {
@@ -332,7 +332,7 @@ export abstract class SiteAdapter {
     return null
   }
 
-  // ==================== 输入框操作 ====================
+  // ==================== Input Box Operations ====================
 
   /** 获取提交按钮选择器 */
   getSubmitButtonSelectors(): string[] {
@@ -409,7 +409,7 @@ export abstract class SiteAdapter {
     return this.findTextarea()
   }
 
-  // ==================== 滚动控制 ====================
+  // ==================== Scroll Control ====================
 
   /** 获取滚动容器 */
   getScrollContainer(): HTMLElement | null {
@@ -553,7 +553,7 @@ export abstract class SiteAdapter {
     return false
   }
 
-  // ==================== 大纲提取 ====================
+  // ==================== Outline Extraction ====================
 
   /** 获取对话历史容器的选择器 */
   getResponseContainerSelector(): string {
@@ -805,7 +805,7 @@ export abstract class SiteAdapter {
     _state: unknown,
   ): Promise<void> {}
 
-  // ==================== 新对话监听 ====================
+  // ==================== New Chat Listener ====================
 
   /** 获取最新回复的文本内容（用于复制功能） */
   getLatestReplyText(): string | null {
@@ -849,7 +849,7 @@ export abstract class SiteAdapter {
     )
   }
 
-  // ==================== 模型锁定 ====================
+  // ==================== Model Lock ====================
 
   /** 获取默认的模型锁定设置 */
   getDefaultLockSettings(): { enabled: boolean; keyword: string } {
@@ -1277,7 +1277,7 @@ export abstract class SiteAdapter {
     return (DOMToolkit.query(selector, { all: true, shadow: true }) as Element[]) || []
   }
 
-  // ==================== 生命周期 ====================
+  // ==================== Lifecycle ====================
 
   /** 页面加载完成后执行 */
   afterPropertiesSet(

@@ -181,7 +181,7 @@ export class GeminiAdapter extends SiteAdapter {
     return false
   }
 
-  // ==================== 会话管理 ====================
+  // ==================== Conversation Management ====================
 
   getConversationList(): ConversationInfo[] {
     const items = (DOMToolkit.query(".conversation", { all: true }) as Element[]) || []
@@ -887,7 +887,7 @@ export class GeminiAdapter extends SiteAdapter {
 
   // ==================== 页面宽度 ====================
 
-  // ==================== 页面宽度控制 ====================
+  // ==================== Page Width Control ====================
 
   getWidthSelectors() {
     return [
@@ -933,7 +933,7 @@ export class GeminiAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 输入框操作 ====================
+  // ==================== Input Box Operations ====================
 
   getTextareaSelectors(): string[] {
     return [
@@ -1007,7 +1007,7 @@ export class GeminiAdapter extends SiteAdapter {
     document.execCommand("delete", false, undefined)
   }
 
-  // ==================== 滚动容器 ====================
+  // ==================== Scroll Container ====================
 
   getScrollContainer(): HTMLElement | null {
     if (this.isSharePage()) {
@@ -1033,7 +1033,7 @@ export class GeminiAdapter extends SiteAdapter {
     ]
   }
 
-  // ==================== 大纲提取 ====================
+  // ==================== Outline Extraction ====================
 
   getUserQuerySelector(): string {
     return "user-query"
@@ -1631,7 +1631,7 @@ export class GeminiAdapter extends SiteAdapter {
     return outline
   }
 
-  // ==================== 生成状态检测 ====================
+  // ==================== Generation Status Detection ====================
 
   isGenerating(): boolean {
     const stopIcon = document.querySelector('mat-icon[fonticon="stop"]')
@@ -1659,7 +1659,7 @@ export class GeminiAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 模型锁定 ====================
+  // ==================== Model Lock ====================
 
   getDefaultLockSettings(): { enabled: boolean; keyword: string } {
     return { enabled: false, keyword: "" }
@@ -1682,7 +1682,7 @@ export class GeminiAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 主题切换 ====================
+  // ==================== Theme Switching ====================
 
   /**
    * 切换 Gemini 主题

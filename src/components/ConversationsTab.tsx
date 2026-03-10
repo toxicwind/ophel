@@ -41,7 +41,7 @@ import {
 } from "~components/icons"
 import { SelectDropdown, Tooltip } from "~components/ui"
 
-// ==================== 类型定义 ====================
+// ==================== Type Definitions ====================
 
 interface ConversationsTabProps {
   manager: ConversationManager

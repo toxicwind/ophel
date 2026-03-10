@@ -95,7 +95,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     return null
   }
 
-  // ==================== 会话管理 ====================
+  // ==================== Conversation Management ====================
 
   getConversationList(): ConversationInfo[] {
     // 侧边栏会话列表：#history 内的 a[data-sidebar-item]
@@ -771,7 +771,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     return this.extractTextWithLineBreaks(lastResponse)
   }
 
-  // ==================== 页面宽度控制 ====================
+  // ==================== Page Width Control ====================
 
   getWidthSelectors() {
     // ChatGPT 使用 CSS 变量 --thread-content-max-width 控制内容宽度
@@ -822,7 +822,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 输入框操作 ====================
+  // ==================== Input Box Operations ====================
 
   getTextareaSelectors(): string[] {
     return ["#prompt-textarea", 'textarea[data-id="root"]', '[contenteditable="true"]']
@@ -892,7 +892,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     this.textarea.dispatchEvent(new Event("input", { bubbles: true }))
   }
 
-  // ==================== 滚动容器 ====================
+  // ==================== Scroll Container ====================
 
   getScrollContainer(): HTMLElement | null {
     // ChatGPT 聊天内容的滚动容器
@@ -938,7 +938,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     ]
   }
 
-  // ==================== 大纲提取 ====================
+  // ==================== Outline Extraction ====================
 
   getUserQuerySelector(): string {
     return '[data-message-author-role="user"]'
@@ -1274,7 +1274,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     return outline
   }
 
-  // ==================== 生成状态检测 ====================
+  // ==================== Generation Status Detection ====================
 
   isGenerating(): boolean {
     // ChatGPT 生成时会显示 stop 按钮
@@ -1312,7 +1312,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 模型锁定 ====================
+  // ==================== Model Lock ====================
 
   getDefaultLockSettings(): { enabled: boolean; keyword: string } {
     return { enabled: false, keyword: "" }
@@ -1357,7 +1357,7 @@ export class ChatGPTAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 主题切换 ====================
+  // ==================== Theme Switching ====================
 
   /**
    * 切换 ChatGPT 主题

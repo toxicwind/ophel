@@ -25,7 +25,7 @@ const storageAdapter: StateStorage = {
   },
 }
 
-// ==================== Store 类型定义 ====================
+// ==================== Store Type Definitions ====================
 
 interface SettingsState {
   // 状态

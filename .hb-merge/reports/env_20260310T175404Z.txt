@@ -1,0 +1,5 @@
+python /usr/bin/python
+cwd /home/toxic/workspace/ophel
+repo /home/toxic/workspace/ophel
+PATH(orig) /home/toxic/.local/bin:/home/toxic/.config/niri/apex-operator/bin:/usr/lib/jvm/java-25-graalvm-ce/bin:/home/toxic/go/bin:/home/toxic/.nvm/versions/node/v25.7.0/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/home/toxic/.local/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+PATH(clean) /usr/bin:/bin:/usr/sbin:/sbin:/home/toxic/.config/niri/apex-operator/bin:/usr/lib/jvm/java-25-graalvm-ce/bin:/home/toxic/go/bin:/home/toxic/.nvm/versions/node/v25.7.0/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/home/toxic/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl

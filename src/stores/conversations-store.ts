@@ -11,7 +11,7 @@ import type { Conversation } from "~core/conversation/types"
 
 import { chromeStorageAdapter } from "./chrome-adapter"
 
-// ==================== Store 类型定义 ====================
+// ==================== Store Type Definitions ====================
 
 interface ConversationsState {
   // 状态

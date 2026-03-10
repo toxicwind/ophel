@@ -12,7 +12,7 @@ import type { Prompt } from "~utils/storage"
 
 import { chromeStorageAdapter } from "./chrome-adapter"
 
-// ==================== Store 类型定义 ====================
+// ==================== Store Type Definitions ====================
 
 interface PromptsState {
   // 状态

@@ -33,7 +33,7 @@ const normalizeFolder = (folder: Folder): Folder => ({
 
 const normalizeFolders = (folders: Folder[]): Folder[] => folders.map(normalizeFolder)
 
-// ==================== Store 类型定义 ====================
+// ==================== Store Type Definitions ====================
 
 interface FoldersState {
   // 状态

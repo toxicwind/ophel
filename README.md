@@ -1,4 +1,4 @@
-# Ophel Atlas 🚀
+# Skein 🚀
 
 ---
 
@@ -34,14 +34,15 @@ Upstream attribution is preserved.
 
 > 让 AI 对话如文档般可阅读、导航、复用
 
-<sub>Language: <strong>简体中文</strong> | <a href="./README_EN.md">English</a></sub>
-
+<sub>Language: <strong>English</strong></sub>
 <div align="center">
   <img src="./assets/icon.png" width="120" height="120" alt="Ophel Logo"/>
 
   <h3 style="margin-top: -2px;">✨ 把对话变成知识，而不是历史 ✨</h3>
   
-  <p>
+  
+> Fork: this repository is a GPLv3 fork of Ophel Atlas (urzeye/ophel). Based on Ophel Atlas by urzeye (GPLv3).
+<p>
     告别无限滚动带来的信息迷航
     </br>
     用实时大纲厘清脉络，
@@ -55,7 +56,7 @@ Upstream attribution is preserved.
   
   <sub>👇 Demo: 从“无限滚动的聊天记录”，到“可导航的 AI 文档”</sub>
   
-  ![Ophel Demo](./assets/demo/outline.gif)
+  ![Demo](./assets/demo/outline.gif)
   
   <p>
     <strong><em>它让 AI 对话第一次成为可组织的工作流</em></strong><br/>

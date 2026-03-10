@@ -92,7 +92,7 @@ export class ClaudeAdapter extends SiteAdapter {
     return window.location.pathname.startsWith("/public/")
   }
 
-  // ==================== 会话管理 ====================
+  // ==================== Conversation Management ====================
 
   getConversationList(): ConversationInfo[] {
     // 侧边栏会话列表
@@ -769,7 +769,7 @@ export class ClaudeAdapter extends SiteAdapter {
     await new Promise((resolve) => setTimeout(resolve, ms))
   }
 
-  // ==================== 输入框操作 ====================
+  // ==================== Input Box Operations ====================
 
   getTextareaSelectors(): string[] {
     return ['[contenteditable="true"]', ".ProseMirror", 'div[role="textbox"]']
@@ -862,7 +862,7 @@ export class ClaudeAdapter extends SiteAdapter {
     return ['div[data-testid="user-message"]', "div.font-claude-response"]
   }
 
-  // ==================== 模型管理 ====================
+  // ==================== Model Management ====================
 
   getModelName(): string | null {
     // 尝试从模型选择器获取
@@ -906,7 +906,7 @@ export class ClaudeAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 杂项 ====================
+  // ==================== Misc ====================
 
   getNewChatButtonSelectors(): string[] {
     return ['a[data-dd-action-name="sidebar-new-item"]', 'a[href="/new"]']
@@ -1335,7 +1335,7 @@ export class ClaudeAdapter extends SiteAdapter {
     return [{ selector: '[data-testid="user-message"]', property: "max-width" }]
   }
 
-  // ==================== 主题切换 ====================
+  // ==================== Theme Switching ====================
 
   async toggleTheme(targetMode: "light" | "dark"): Promise<boolean> {
     try {

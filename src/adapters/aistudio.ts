@@ -223,7 +223,7 @@ export class AIStudioAdapter extends SiteAdapter {
     return null
   }
 
-  // ==================== 输入框操作 ====================
+  // ==================== Input Box Operations ====================
 
   getTextareaSelectors(): string[] {
     // AI Studio 使用标准 textarea，有 cdk-textarea-autosize 类
@@ -320,7 +320,7 @@ export class AIStudioAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 滚动容器 ====================
+  // ==================== Scroll Container ====================
 
   getScrollContainer(): HTMLElement | null {
     // 聊天区域滚动容器
@@ -379,7 +379,7 @@ export class AIStudioAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 模型列表抓取 ====================
+  // ==================== Model List Discovery ====================
 
   /**
    * 获取可用模型列表（从 DOM 动态抓取）
@@ -802,7 +802,7 @@ export class AIStudioAdapter extends SiteAdapter {
     return true
   }
 
-  // ==================== 大纲提取 ====================
+  // ==================== Outline Extraction ====================
 
   async deleteConversationOnSite(
     target: ConversationDeleteTarget,
@@ -1743,7 +1743,7 @@ export class AIStudioAdapter extends SiteAdapter {
     return outline
   }
 
-  // ==================== 生成状态检测 ====================
+  // ==================== Generation Status Detection ====================
 
   isGenerating(): boolean {
     // AI Studio 生成状态检测（多语言兼容，不依赖按钮文字）
@@ -1785,7 +1785,7 @@ export class AIStudioAdapter extends SiteAdapter {
     return false
   }
 
-  // ==================== 模型名称获取 ====================
+  // ==================== Model Name Detection ====================
 
   /** 获取当前使用的模型名称 */
   getModelName(): string | null {
@@ -1837,7 +1837,7 @@ export class AIStudioAdapter extends SiteAdapter {
     return "Gemini 1.5 Flash"
   }
 
-  // ==================== 复制最新回复 ====================
+  // ==================== Copy Latest Reply ====================
 
   getLatestReplyText(): string | null {
     // AI 回复容器
@@ -1850,7 +1850,7 @@ export class AIStudioAdapter extends SiteAdapter {
     return this.extractTextWithLineBreaks(lastMessage)
   }
 
-  // ==================== 新对话按钮 ====================
+  // ==================== New Chat Button ====================
 
   getNewChatButtonSelectors(): string[] {
     // AI Studio 新对话按钮选择器（多语言兼容，不依赖按钮文字）
@@ -1862,7 +1862,7 @@ export class AIStudioAdapter extends SiteAdapter {
     ]
   }
 
-  // ==================== 主题切换 ====================
+  // ==================== Theme Switching ====================
 
   /**
    * 切换 AI Studio 主题

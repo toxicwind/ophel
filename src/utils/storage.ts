@@ -34,7 +34,7 @@ export const STORAGE_KEYS = {
 export const CLEAR_ALL_FLAG_KEY = "ophel:clearAllFlag"
 export const CLEAR_ALL_FLAG_TTL_MS = 5 * 1000
 
-// ==================== 类型定义 ====================
+// ==================== Type Definitions ====================
 
 // 站点 ID 类型
 export type SiteId =

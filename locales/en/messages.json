@@ -1,10 +1,10 @@
 {
   "extensionName": {
-    "message": "Hypebrut Loom",
+    "message": "Skein",
     "description": "Extension name"
   },
   "extensionDescription": {
-    "message": "Turn AI chats into readable, navigable knowledge. Use outlines, folders, and prompts to organize your workflow and stop scrolling.",
+    "message": "Turn AI chats into searchable knowledge",
     "description": "Extension description"
   },
   "archivist": {

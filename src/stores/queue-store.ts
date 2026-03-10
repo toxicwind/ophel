@@ -7,7 +7,7 @@
 
 import { create } from "zustand"
 
-// ==================== 类型定义 ====================
+// ==================== Type Definitions ====================
 
 export interface QueueItem {
   id: string

@@ -13,7 +13,7 @@ import {
   smartScrollToTop,
 } from "~utils/scroll-helper"
 
-// ==================== 类型定义 ====================
+// ==================== Type Definitions ====================
 
 export interface LoadHistoryOptions {
   /** 站点适配器 */

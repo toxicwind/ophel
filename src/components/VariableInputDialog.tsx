@@ -14,7 +14,7 @@ import { ClearIcon } from "~components/icons"
 import { DialogOverlay } from "~components/ui"
 import { t } from "~utils/i18n"
 
-// ==================== 类型定义 ====================
+// ==================== Type Definitions ====================
 
 /**
  * 解析后的变量结构

@@ -190,7 +190,7 @@ export class GrokAdapter extends SiteAdapter {
     this.cachedDialogConversations = cache
   }
 
-  // ==================== 会话管理 ====================
+  // ==================== Conversation Management ====================
 
   getConversationList(): ConversationInfo[] {
     const conversationMap = new Map<string, ConversationInfo>()
@@ -1028,9 +1028,9 @@ export class GrokAdapter extends SiteAdapter {
     return this.extractTextWithLineBreaks(lastMessage)
   }
 
-  // ==================== 页面宽度控制 ====================
+  // ==================== Page Width Control ====================
 
-  // ==================== 页面宽度控制 ====================
+  // ==================== Page Width Control ====================
 
   getWidthSelectors() {
     // Grok 使用 CSS 变量 --content-max-width 控制主内容区域宽度
@@ -1054,7 +1054,7 @@ export class GrokAdapter extends SiteAdapter {
     ]
   }
 
-  // ==================== 输入框操作 ====================
+  // ==================== Input Box Operations ====================
 
   getTextareaSelectors(): string[] {
     // Grok 使用 Tiptap 富文本编辑器
@@ -1130,7 +1130,7 @@ export class GrokAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 滚动容器 ====================
+  // ==================== Scroll Container ====================
 
   getScrollContainer(): HTMLElement | null {
     // 主内容区域的滚动容器
@@ -1170,7 +1170,7 @@ export class GrokAdapter extends SiteAdapter {
     return ['[class*="prose"]', '[dir="ltr"]']
   }
 
-  // ==================== 大纲提取 ====================
+  // ==================== Outline Extraction ====================
 
   getUserQuerySelector(): string {
     // 用户消息气泡特征：.message-bubble 且有右下角圆角 rounded-br-lg
@@ -1473,7 +1473,7 @@ export class GrokAdapter extends SiteAdapter {
     return outline
   }
 
-  // ==================== 生成状态检测 ====================
+  // ==================== Generation Status Detection ====================
 
   isGenerating(): boolean {
     // 检查是否有停止按钮可见
@@ -1517,7 +1517,7 @@ export class GrokAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 模型锁定 ====================
+  // ==================== Model Lock ====================
 
   getDefaultLockSettings(): { enabled: boolean; keyword: string } {
     return { enabled: false, keyword: "" }
@@ -1580,7 +1580,7 @@ export class GrokAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 主题切换 ====================
+  // ==================== Theme Switching ====================
 
   /**
    * 切换 Grok 主题

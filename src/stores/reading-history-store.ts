@@ -9,7 +9,7 @@ import { createJSONStorage, persist } from "zustand/middleware"
 
 import { chromeStorageAdapter } from "./chrome-adapter"
 
-// ==================== 类型定义 ====================
+// ==================== Type Definitions ====================
 
 export interface ReadingPosition {
   top: number
@@ -22,7 +22,7 @@ export interface ReadingPosition {
   scrollHeight?: number // 保存时的容器高度
 }
 
-// ==================== Store 类型定义 ====================
+// ==================== Store Type Definitions ====================
 
 interface ReadingHistoryState {
   // 状态

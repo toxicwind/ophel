@@ -92,7 +92,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     return cidMatch ? cidMatch[1] : ""
   }
 
-  // ==================== 会话管理 ====================
+  // ==================== Conversation Management ====================
 
   getSessionName(): string | null {
     const conversations = DOMToolkit.query(".conversation", {
@@ -748,7 +748,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     ]
   }
 
-  // ==================== 页面宽度控制 ====================
+  // ==================== Page Width Control ====================
 
   getWidthSelectors() {
     // 辅助函数：生成带 scoped globalSelector 的配置
@@ -794,7 +794,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     return [{ selector: ".disclaimer", action: "hide" as const }]
   }
 
-  // ==================== 输入框操作 ====================
+  // ==================== Input Box Operations ====================
 
   getTextareaSelectors(): string[] {
     return [
@@ -1023,7 +1023,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     return false
   }
 
-  // ==================== 滚动容器 ====================
+  // ==================== Scroll Container ====================
 
   getScrollContainer(): HTMLElement | null {
     // 使用 .chat-mode-scroller 精确选择器，排除侧边栏
@@ -1051,7 +1051,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     ]
   }
 
-  // ==================== 大纲提取 ====================
+  // ==================== Outline Extraction ====================
 
   /** Gemini Enterprise: .question-block 是用户提问的容器 */
   getUserQuerySelector(): string {
@@ -1419,7 +1419,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 生成状态检测 ====================
+  // ==================== Generation Status Detection ====================
 
   /** 检测 AI 是否正在生成响应（递归 Shadow DOM 搜索）*/
   isGenerating(): boolean {
@@ -1508,7 +1508,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 生命周期 ====================
+  // ==================== Lifecycle ====================
 
   /** 覆盖基类：页面加载完成后执行 */
   afterPropertiesSet(
@@ -1573,7 +1573,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 模型锁定 ====================
+  // ==================== Model Lock ====================
 
   getDefaultLockSettings(): { enabled: boolean; keyword: string } {
     return { enabled: true, keyword: "3 Pro" }
@@ -1590,7 +1590,7 @@ export class GeminiEnterpriseAdapter extends SiteAdapter {
     }
   }
 
-  // ==================== 主题切换 ====================
+  // ==================== Theme Switching ====================
 
   /**
    * 模拟点击原生设置切换主题 (针对 Gemini Enterprise)
