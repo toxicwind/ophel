@@ -1,5 +1,7 @@
 # Ophel Atlas 🚀
 
+> **This is a fork: toxicwind/ophel — Hypebrut Loom (based on Ophel Atlas).**
+
 > 让 AI 对话如文档般可阅读、导航、复用
 
 <sub>Language: <strong>简体中文</strong> | <a href="./README_EN.md">English</a></sub>

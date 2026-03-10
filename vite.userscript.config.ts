@@ -4,7 +4,7 @@ import * as path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import monkey from "vite-plugin-monkey"
-
+import { BRAND_NAME } from "./src/brand/brand"
 // ========== Dynamic Metadata Loading ==========
 const pkg = JSON.parse(fs.readFileSync(path.resolve(__dirname, "package.json"), "utf-8"))
 const author: string = pkg.author
@@ -39,7 +39,7 @@ function loadLocalizedMetadata(): {
 
   let defaultDescription = "将 AI 对话转化为可阅读、可导航、可复用的知识内容。通过实时大纲、会话文件夹与 Prompt 词库，让对话告别无限滚动，成为可组织、可沉淀的工作流，适用于高频使用 AI 的学习与工作场景。" + seoKeywordsCN + " | Turn AI chats into readable, navigable knowledge. Use outlines, folders, and prompts to organize your workflow and stop scrolling." + seoKeywordsEN
 
-  const name: Record<string, string> = { "": "Ophel Atlas - AI 对话结构化与导航工具" + seoNameCN } // Default fallback
+  const name: Record<string, string> = { "": BRAND_NAME + " - AI 对话结构化与导航工具" + seoNameCN } // Default fallback
   const description: Record<string, string> = {
     "": defaultDescription.substring(0, 500),
   }

@@ -11,6 +11,7 @@ import { StarIcon } from "~components/icons/StarIcon"
 import { Tooltip } from "~components/ui/Tooltip"
 import { getStoreInfo } from "~utils/getStoreInfo"
 import { setLanguage, t } from "~utils/i18n"
+import { APP_DISPLAY_NAME } from "~utils/config"
 import { version } from "../package.json"
 
 import "./popup.css"
@@ -165,8 +166,12 @@ function IndexPopup() {
       {/* Header */}
       <div className="popup-header">
         <div className="popup-header-left">
-          <img src={chrome.runtime.getURL("assets/icon.png")} alt="Ophel" className="popup-logo" />
-          <span className="popup-title">Ophel</span>
+          <img
+            src={chrome.runtime.getURL("assets/icon.png")}
+            alt={APP_DISPLAY_NAME}
+            className="popup-logo"
+          />
+          <span className="popup-title">{APP_DISPLAY_NAME}</span>
         </div>
         <Tooltip content={t("popupSettings")}>
           <button className="popup-settings-btn" onClick={openOptionsPage}>
@@ -240,7 +245,7 @@ function IndexPopup() {
       <div className="popup-footer">
         <span className="popup-version">v{version}</span>
         <div className="popup-footer-actions">
-          <Tooltip content={t("rateAndReview") || "Love Ophel?"}>
+          <Tooltip content={t("rateAndReview") || `Love ${APP_DISPLAY_NAME}?`}>
             <button className="popup-action-pill review-btn" onClick={() => openUrl(storeInfo.url)}>
               {storeInfo.icon}
               <span>{storeInfo.label}</span>
