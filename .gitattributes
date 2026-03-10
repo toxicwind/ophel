@@ -25,3 +25,6 @@
 *.gif binary
 *.ico binary
 *.webp binary
+
+*.json merge=hbjson
+*.jsonl merge=hbjsonl
