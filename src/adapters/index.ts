@@ -13,6 +13,7 @@ import { DoubaoAdapter } from "./doubao"
 import { GeminiAdapter } from "./gemini"
 import { GeminiEnterpriseAdapter } from "./gemini-enterprise"
 import { GrokAdapter } from "./grok"
+import { KimiAdapter } from "./kimi"
 
 // 所有可用的适配器
 const adapters: SiteAdapter[] = [
@@ -24,6 +25,7 @@ const adapters: SiteAdapter[] = [
   new ClaudeAdapter(),
   new DeepSeekAdapter(),
   new DoubaoAdapter(),
+  new KimiAdapter(),
 ]
 
 /**

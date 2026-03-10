@@ -729,6 +729,17 @@ const SiteSettingsPage: React.FC<SiteSettingsPageProps> = ({ siteId, initialTab 
             onDisabledClick={() => showPrerequisiteToast(modelLockLabel)}
             settingId="model-lock-grok"
           />
+
+          {/* Kimi */}
+          <ModelLockRow
+            label="Kimi"
+            siteKey="kimi"
+            settings={settings}
+            setSettings={setSettings}
+            placeholder={t("modelKeywordPlaceholder") || "模型关键词"}
+            onDisabledClick={() => showPrerequisiteToast(modelLockLabel)}
+            settingId="model-lock-kimi"
+          />
         </SettingCard>
       )}
 
