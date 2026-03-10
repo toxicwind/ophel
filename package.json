@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/urzeye/ophel.git"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@10.29.3",
   "scripts": {
     "dev": "plasmo dev --target=firefox-mv3",
     "dev:firefox": "plasmo dev --target=firefox-mv3",
