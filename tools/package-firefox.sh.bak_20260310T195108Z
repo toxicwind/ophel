@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# NOTE: enforce pnpm via corepack to avoid stale pnpm binaries in PATH
-PNPM() { corepack pnpm "$@"; }
-
-
 mkdir -p .local_logs
 LOG_FILE=".local_logs/package-firefox.log"
 

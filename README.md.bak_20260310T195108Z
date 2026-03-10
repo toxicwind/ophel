@@ -1,4 +1,4 @@
-# Ophel Atlas
+# Ophel Atlas 🚀
 
 ---
 
@@ -345,6 +345,3 @@ It is meant to make long-running AI chats less disposable by adding:
 - settings surfaces for history-oriented behavior
 
 The goal is not just UI chrome. The goal is durable interaction state across supported AI surfaces.
-
-> Fork note: this repository is a fork of **Ophel Atlas** (GPLv3) by urzeye.
-> Turn AI chats into documents you can read, navigate, and reuse

@@ -1,8 +1,8 @@
 {
   "name": "ophel",
-  "displayName": "SKEIN",
+  "displayName": "Ophel Atlas",
   "version": "1.0.15",
-  "description": "SKEIN — AI chat archivist + vault + export",
+  "description": "Turn AI chats into documents you can read, navigate, and reuse",
   "author": "urzeye",
   "license": "GPL-3.0-only",
   "repository": {
