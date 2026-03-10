@@ -1,5 +1,15 @@
 # Ophel Atlas 🚀
 
+---
+
+## Fork Note
+
+This repository is a fork of **urzeye/ophel** (Ophel Atlas, GPLv3).
+
+This fork is Firefox-first and adds an **Archivist** capture/export pipeline plus an optional local vault bridge (native messaging).
+
+Upstream attribution is preserved.
+
 > **This is a fork: toxicwind/ophel — Hypebrut Loom (based on Ophel Atlas).**
 
 > 让 AI 对话如文档般可阅读、导航、复用

@@ -77,6 +77,7 @@ const FeaturesPage: React.FC<FeaturesPageProps> = ({ siteId: _siteId, initialTab
     { id: FEATURES_TAB_IDS.PROMPTS, label: t("tabPrompts") || "Prompts" },
     { id: FEATURES_TAB_IDS.TAB_SETTINGS, label: t("tabSettingsTab") || "标签页" },
     { id: FEATURES_TAB_IDS.CONTENT, label: t("navContent") || "内容交互" },
+    { id: FEATURES_TAB_IDS.ARCHIVIST, label: "Archivist" },
     { id: FEATURES_TAB_IDS.READING_HISTORY, label: t("readingHistoryTitle") || "阅读历史" },
   ]
 
@@ -724,6 +725,51 @@ const FeaturesPage: React.FC<FeaturesPageProps> = ({ siteId: _siteId, initialTab
             checked={settings.content?.tableCopy ?? true}
             onChange={() =>
               updateNestedSetting("content", "tableCopy", !settings.content?.tableCopy)
+            }
+          />
+        </SettingCard>
+      )}
+
+      {/* ========== Archivist Tab ========== */}
+      {activeTab === FEATURES_TAB_IDS.ARCHIVIST && (
+        <SettingCard title="Archivist 归档管道" description="高级消息处理与多维导出系统">
+          <ToggleRow
+            label="启用 Archivist"
+            description="开启后可在工具栏访问归档增强功能"
+            settingId="archivist-enabled"
+            checked={settings.archivist?.enabled ?? true}
+            onChange={() =>
+              updateNestedSetting("archivist", "enabled", !settings.archivist?.enabled)
+            }
+          />
+
+          <ToggleRow
+            label="API 抓取模式"
+            description="优先使用站点 API 获取完整原始数据（更精准，但可能受网络限制）"
+            settingId="archivist-api-capture"
+            checked={settings.archivist?.chatGptApiCapture ?? true}
+            disabled={!settings.archivist?.enabled}
+            onChange={() =>
+              updateNestedSetting(
+                "archivist",
+                "chatGptApiCapture",
+                !settings.archivist?.chatGptApiCapture,
+              )
+            }
+          />
+
+          <ToggleRow
+            label="选择性导出"
+            description="导出前允许手动挑选需要包含的消息轮次"
+            settingId="archivist-selective-export"
+            checked={settings.archivist?.selectiveExport ?? true}
+            disabled={!settings.archivist?.enabled}
+            onChange={() =>
+              updateNestedSetting(
+                "archivist",
+                "selectiveExport",
+                !settings.archivist?.selectiveExport,
+              )
             }
           />
         </SettingCard>

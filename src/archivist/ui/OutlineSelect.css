@@ -1,0 +1,60 @@
+.archivist-outline-select {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: var(--gh-bg);
+  color: var(--gh-text);
+}
+
+.archivist-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--gh-border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.archivist-row:hover {
+  background: var(--gh-hover);
+}
+
+.archivist-row.selected {
+  background: var(--gh-user-query-bg);
+  border-color: var(--gh-primary);
+}
+
+.archivist-row-content {
+  flex: 1;
+  font-size: 14px;
+}
+
+.archivist-controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.archivist-btn {
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--gh-border);
+  background: var(--gh-bg-secondary);
+  cursor: pointer;
+}
+
+.archivist-btn:hover {
+  background: var(--gh-hover);
+}
+
+.archivist-filter-input {
+  flex: 1;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--gh-input-border);
+  background: var(--gh-input-bg);
+  color: var(--gh-text);
+}

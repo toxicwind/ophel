@@ -269,6 +269,13 @@ export interface Settings {
 
   // ChatGPT 专属设置
   chatgpt?: ChatGPTSettings
+
+  // Archivist 设置
+  archivist?: {
+    enabled: boolean
+    chatGptApiCapture: boolean
+    selectiveExport: boolean
+  }
 }
 
 // 默认站点主题配置
@@ -388,7 +395,7 @@ export const DEFAULT_SETTINGS: Settings = {
   },
 
   features: {
-    order: ["outline", "conversations", "prompts"],
+    order: ["outline", "conversations", "prompts", "archivist"],
     prompts: {
       enabled: true,
       doubleClickToSend: false,
@@ -484,6 +491,11 @@ export const DEFAULT_SETTINGS: Settings = {
   chatgpt: {
     // 默认开启
     markdownFix: true,
+  },
+  archivist: {
+    enabled: true,
+    chatGptApiCapture: true,
+    selectiveExport: true,
   },
 }
 

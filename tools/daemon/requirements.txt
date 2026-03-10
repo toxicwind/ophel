@@ -1,0 +1,8 @@
+mcp
+lancedb
+tantivy
+pandas
+pyarrow
+sentence-transformers
+uvicorn
+fastapi

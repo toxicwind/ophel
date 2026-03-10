@@ -22,6 +22,7 @@ export const TAB_IDS = {
   PROMPTS: "prompts",
   OUTLINE: "outline",
   CONVERSATIONS: "conversations",
+  ARCHIVIST: "archivist",
   SETTINGS: "settings",
 } as const
 
@@ -48,6 +49,7 @@ export const FEATURES_TAB_IDS = {
   TAB_SETTINGS: "tab",
   CONTENT: "content",
   READING_HISTORY: "readingHistory",
+  ARCHIVIST: "archivist",
   TOOLBOX: "toolbox",
 } as const
 
@@ -172,6 +174,10 @@ const SETTING_ID_ROUTE_RULES: SettingRouteRule[] = [
     prefix: "appearance-custom-",
     route: { page: NAV_IDS.APPEARANCE, subTab: APPEARANCE_TAB_IDS.CUSTOM },
   },
+  {
+    prefix: "archivist-",
+    route: { page: NAV_IDS.FEATURES, subTab: FEATURES_TAB_IDS.ARCHIVIST },
+  },
 ]
 
 export const SETTING_ID_ALIASES: Record<string, string> = {
@@ -224,6 +230,9 @@ export const SETTING_ID_ALIASES: Record<string, string> = {
   "appearance.presets.light": "appearance-preset-light",
   "appearance.presets.dark": "appearance-preset-dark",
   "appearance.custom.styles": "appearance-custom-styles",
+  "archivist.enabled": "archivist-enabled",
+  "archivist.chatGptApiCapture": "archivist-api-capture",
+  "archivist.selectiveExport": "archivist-selective-export",
 }
 
 export const resolveSettingId = (settingId?: string): string | undefined => {
@@ -721,6 +730,21 @@ export const SETTINGS_SEARCH_ITEMS: SettingsSearchItem[] = [
     settingId: "appearance-custom-styles",
     title: "自定义主题样式",
     keywords: ["appearance", "custom style", "主题样式", "css"],
+  },
+  {
+    settingId: "archivist-enabled",
+    title: "启用 Archivist 管道",
+    keywords: ["archivist", "pipeline", "archive", "归档"],
+  },
+  {
+    settingId: "archivist-api-capture",
+    title: "启用 API 数据抓取",
+    keywords: ["archivist", "api", "capture", "fetch"],
+  },
+  {
+    settingId: "archivist-selective-export",
+    title: "启用选择性导出",
+    keywords: ["archivist", "selective", "export", "选择性"],
   },
   ...SHORTCUT_SETTINGS_SEARCH_ITEMS,
 ]

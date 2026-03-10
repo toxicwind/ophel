@@ -15,6 +15,7 @@ import {
   ThemeDarkIcon,
   ThemeLightIcon,
 } from "~components/icons"
+import { BRAND_NAME, UPSTREAM_ATTR } from "~brand/brand"
 import { SITE_IDS, TAB_IDS } from "~constants"
 import type { ConversationManager } from "~core/conversation-manager"
 import type { OutlineManager } from "~core/outline-manager"
@@ -28,11 +29,13 @@ import { DEFAULT_SETTINGS, type Prompt } from "~utils/storage"
 import { showToast } from "~utils/toast"
 import { anchorStore } from "~stores/anchor-store"
 
+import { ArchivistTab } from "./ArchivistTab"
 import { ConversationsTab } from "./ConversationsTab"
 import { LoadingOverlay } from "./LoadingOverlay"
 import { OutlineTab } from "./OutlineTab"
 import { PromptsTab } from "./PromptsTab"
 import { Tooltip } from "~components/ui/Tooltip"
+import { ArchivistIcon } from "~components/icons"
 
 interface MainPanelProps {
   onClose: () => void
@@ -302,6 +305,7 @@ export const MainPanel: React.FC<MainPanelProps> = ({
       return false
     if (tabId === TAB_IDS.OUTLINE && currentSettings.features?.outline?.enabled === false)
       return false
+    if (tabId === TAB_IDS.ARCHIVIST && currentSettings.archivist?.enabled === false) return false
     return true
   })
 
@@ -393,8 +397,8 @@ export const MainPanel: React.FC<MainPanelProps> = ({
                 // 发送隐私模式切换事件给 TabManager
                 window.postMessage({ type: "GH_PRIVACY_TOGGLE" }, "*")
               }}>
-              <span style={{ fontSize: "16px" }}>✨</span>
-              <span style={{ fontSize: "15px", fontWeight: 600 }}>{t("panelTitle")}</span>
+              <span style={{ fontSize: "16px" }}>🧶</span>
+              <span style={{ fontSize: "15px", fontWeight: 600 }}>{BRAND_NAME}</span>
             </div>
           </Tooltip>
 
@@ -555,6 +559,7 @@ export const MainPanel: React.FC<MainPanelProps> = ({
             if (tab === TAB_IDS.OUTLINE) IconComp = OutlineIcon
             else if (tab === TAB_IDS.PROMPTS) IconComp = PromptIcon
             else if (tab === TAB_IDS.CONVERSATIONS) IconComp = ConversationIcon
+            else if (tab === TAB_IDS.ARCHIVIST) IconComp = ArchivistIcon
 
             return (
               <button
@@ -618,6 +623,7 @@ export const MainPanel: React.FC<MainPanelProps> = ({
           {activeTab === TAB_IDS.OUTLINE && (
             <OutlineTab manager={outlineManager} onJumpBefore={saveAnchor} />
           )}
+          {activeTab === TAB_IDS.ARCHIVIST && <ArchivistTab adapter={adapter} />}
         </div>
 
         {/* Footer - 底部固定按钮 */}

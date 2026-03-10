@@ -21,6 +21,7 @@ import {
   type ExtensionMessage,
 } from "~utils/messaging"
 import { localStorage, type Settings } from "~utils/storage"
+import { registerArchivistBridgeHandler } from "~archivist/native-bridge"
 
 /**
  * Ophel - Background Service Worker
@@ -36,6 +37,9 @@ import { localStorage, type Settings } from "~utils/storage"
 chrome.runtime.onInstalled.addListener(() => {
   setupDynamicRules()
 })
+
+// Register Archivist Native Messaging Bridge
+registerArchivistBridgeHandler()
 
 // 监听权限移除
 chrome.permissions.onRemoved.addListener(async (removed) => {

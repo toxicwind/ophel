@@ -40,3 +40,18 @@ docs/.vitepress/dist
 
 .spec-workflow/.idea/
 .playwright-mcp
+
+# ophel-finalize
+/FINAL*.py
+/FINAL*.log
+/final*.log
+/finalize_*.txt
+/finalize_bundle.*
+/chunk_*.txt
+/unleash-repo-schema-v1-codeium-language-server.json
+/*.bak
+/*.bak.*
+/*.tmp
+/*.old
+/*.orig
+/*.rej
