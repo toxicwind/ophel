@@ -562,8 +562,22 @@ export class KimiAdapter extends SiteAdapter {
     ]
   }
 
-  getWidthSelectors(): Array<{ selector: string; property: string }> {
-    return [{ selector: ".chat-content-container", property: "max-width" }]
+  getWidthSelectors() {
+    return [
+      { selector: ".chat-content-container", property: "max-width" },
+      {
+        selector:
+          ".chat-content-list, .chat-content-list.chat-content-list, .chat-content-list[data-v-b308b9a1]",
+        property: "max-width",
+      },
+      {
+        selector:
+          ".chat-content-list, .chat-content-list.chat-content-list, .chat-content-list[data-v-b308b9a1]",
+        property: "width",
+        value: "100%",
+        noCenter: true,
+      },
+    ]
   }
 
   getMarkdownFixerConfig(): MarkdownFixerConfig {
