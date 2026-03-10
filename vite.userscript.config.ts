@@ -154,6 +154,8 @@ export default defineConfig({
       "~types": path.resolve(__dirname, "src/types"),
       "~utils": path.resolve(__dirname, "src/utils"),
       "~style.css": path.resolve(__dirname, "src/style.css"),
+      "~brand": path.resolve(__dirname, "src/brand"),
+      "~archivist": path.resolve(__dirname, "src/archivist"),
       "~": path.resolve(__dirname, "src"),
     },
   },

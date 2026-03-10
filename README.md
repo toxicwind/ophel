@@ -2,6 +2,26 @@
 
 ---
 
+## Fork: SKEIN
+
+**SKEIN** is a privacy-first fork of **Ophel Atlas**.
+
+- Focus: **Firefox XPI-first**, local vault, Native Messaging, MCP search.
+- Attribution: Based on Ophel Atlas by urzeye (GPL-3.0)
+
+### Vault + MCP (Local)
+
+- Extension ingests captures into a local LanceDB vault via Native Messaging.
+- MCP server exposes keyword / semantic / hybrid search.
+- Embeddings: **FastEmbed** (ONNX) by default — avoids Torch.
+
+Setup:
+
+- `python3 tools/daemon/setup.py --repo /home/toxic/workspace/ophel`
+- run MCP: `tools/daemon/venv/bin/python3 tools/daemon/mcp_server.py`
+
+---
+
 ## Fork Note
 
 This repository is a fork of **urzeye/ophel** (Ophel Atlas, GPLv3).
@@ -311,3 +331,17 @@ flowchart TB
 ## 📜 许可证
 
 本项目采用 **GNU GPLv3** 协议。详情请参阅 [LICENSE](./LICENSE)。
+
+## Archivist
+
+Archivist is the conversation-history and reading-memory layer for Ophel.
+
+It is meant to make long-running AI chats less disposable by adding:
+
+- reading history and revisit flow
+- conversation organization primitives
+- prompt queue / workflow continuity
+- site-aware persistence hooks
+- settings surfaces for history-oriented behavior
+
+The goal is not just UI chrome. The goal is durable interaction state across supported AI surfaces.

@@ -38,7 +38,6 @@ const LazyInput: React.FC<LazyInputProps> = ({
 }) => {
   const [localValue, setLocalValue] = useState(value)
 
-  // 当外部 value 变化时（如重置），同步到 localValue
   React.useEffect(() => {
     setLocalValue(value)
   }, [value])
@@ -187,12 +186,10 @@ const FeaturesPage: React.FC<FeaturesPageProps> = ({ siteId: _siteId, initialTab
               onChange={async () => {
                 const checked = settings.tab?.showNotification
                 if (!checked) {
-                  // 油猴脚本环境：直接启用（不需要检查权限，GM_notification 已通过 @grant 声明）
                   if (!platform.hasCapability("permissions")) {
                     updateNestedSetting("tab", "showNotification", true)
                     return
                   }
-                  // 1. 检查是否已有权限
                   const response = await sendToBackground({
                     type: MSG_CHECK_PERMISSIONS,
                     permissions: ["notifications"],
@@ -201,7 +198,6 @@ const FeaturesPage: React.FC<FeaturesPageProps> = ({ siteId: _siteId, initialTab
                   if (response.success && response.hasPermission) {
                     updateNestedSetting("tab", "showNotification", true)
                   } else {
-                    // 2. 请求权限 (打开独立窗口)
                     await sendToBackground({
                       type: MSG_REQUEST_PERMISSIONS,
                       permType: "notifications",

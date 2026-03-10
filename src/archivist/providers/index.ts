@@ -1,5 +1,5 @@
 import { getAdapter } from "~adapters"
-import { SITE_IDS } from "~constants/site"
+import { SITE_IDS } from "~constants/defaults"
 import type { ProviderId, NormalizedMessage } from "../types"
 import { captureChatGPTApi } from "./chatgpt_api"
 import { captureDOM } from "./dom_capture"

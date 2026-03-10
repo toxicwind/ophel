@@ -1,3 +1,5 @@
-export const BRAND_NAME = "Hypebrut Loom"
-export const BRAND_TAGLINE = "AI chat archivist + navigator"
-export const UPSTREAM_ATTR = "Based on Ophel Atlas by urzeye"
+export const BRAND = {
+  name: "SKEIN",
+  tagline: "Turn AI chats into navigable, searchable knowledge",
+  upstream: "Based on Ophel Atlas by urzeye (GPL-3.0)",
+} as const

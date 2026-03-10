@@ -1,78 +1,88 @@
 #!/usr/bin/env python3
-import asyncio
+"""Skein Vault MCP Server (FastMCP)
+
+The extension ingests via Native Messaging into LanceDB.
+This MCP server is the *insight plane*: tools for keyword/semantic/hybrid retrieval over your vault.
+
+Transport: stdio by default (Claude Desktop compatible).
+"""
+
+from __future__ import annotations
+
 import os
+from pathlib import Path
+from typing import Any, Dict, List
+
+import numpy as np
 import lancedb
-from mcp.server import FastMCP
+from fastembed import TextEmbedding
+from mcp.server.fastmcp import FastMCP
 
-# Define FastMCP server for Hypebrut Loom
-mcp = FastMCP("hypebrut-loom-vault")
-DB_PATH = os.path.expanduser("~/.local/share/hypebrut-loom/vault")
 
-def get_db():
-    if not os.path.exists(DB_PATH):
-        return None
-    try:
-        db = lancedb.connect(DB_PATH)
-        return db.open_table("messages")
-    except Exception:
-        return None
+APP = "skein"
+DEFAULT_MODEL = os.environ.get("SKEIN_EMBED_MODEL") or "BAAI/bge-small-en-v1.5"
+
+HOME = Path.home()
+VAULT_DIR = Path(os.environ.get("SKEIN_VAULT_DIR") or (HOME / ".local/share" / APP / "vault"))
+DB_DIR = Path(os.environ.get("SKEIN_LANCE_DIR") or (VAULT_DIR / "lance"))
+
+mcp = FastMCP("skein-vault")
+
+
+class Vault:
+    def __init__(self) -> None:
+        self.db = lancedb.connect(str(DB_DIR))
+        self.tbl = self.db.open_table("messages")
+        self.embedder = TextEmbedding(model_name=DEFAULT_MODEL)
+
+    def _embed(self, q: str) -> np.ndarray:
+        v = next(self.embedder.embed([q]))
+        return np.array([float(x) for x in v], dtype="float32")
+
+    def kw(self, q: str, limit: int) -> List[Dict[str, Any]]:
+        return self.tbl.search(q, query_type="fts").limit(limit).to_list()
+
+    def vec(self, q: str, limit: int) -> List[Dict[str, Any]]:
+        return self.tbl.search(self._embed(q)).limit(limit).to_list()
+
+    def hybrid(self, q: str, limit: int) -> List[Dict[str, Any]]:
+        a = self.kw(q, limit)
+        b = self.vec(q, limit)
+        seen = set()
+        merged: List[Dict[str, Any]] = []
+        for x in a + b:
+            xid = x.get("id")
+            if xid in seen:
+                continue
+            seen.add(xid)
+            merged.append(x)
+        return merged[:limit]
+
+
+_vault: Vault | None = None
+
+
+def vault() -> Vault:
+    global _vault
+    if _vault is None:
+        _vault = Vault()
+    return _vault
+
 
 @mcp.tool()
-async def search_vault_keyword(query: str, limit: int = 10) -> str:
-    """
-    Search the Hypebrut Loom AI Chat vault using keyword (full-text) search.
-    Useful for finding specific terms, errors, or exact names from past AI conversations.
-    """
-    tbl = get_db()
-    if not tbl:
-        return "Vault is empty or uninitialized."
-        
-    try:
-        # FTS query over 'text' column if configured
-        results = tbl.search(query).limit(limit).to_pandas()
-        if results.empty:
-            return "No matching chats found."
-            
-        formatted = []
-        for idx, row in results.iterrows():
-            preview = row.get("text", "")[:500]
-            role = row.get("role", "unknown")
-            provider = row.get("provider", "unknown")
-            formatted.append(f"[{provider.upper()} | {role.upper()}] {row.get('created_at', '')}:\n{preview}...")
-            
-        return "\n\n---\n\n".join(formatted)
-    except Exception as e:
-        return f"Search error: {str(e)}"
+def vault_search_keyword(q: str, limit: int = 8) -> Dict[str, Any]:
+    return {"results": vault().kw(q, limit)}
+
 
 @mcp.tool()
-async def search_vault_semantic(query: str, limit: int = 10) -> str:
-    """
-    Search the Hypebrut Loom AI Chat vault using semantic vector similarity.
-    Useful for asking conceptual questions like "when did we discuss database schemas?"
-    Requires the indexer to have embedded the messages (which occurs automatically).
-    """
-    tbl = get_db()
-    if not tbl:
-        return "Vault is empty or uninitialized."
+def vault_search_semantic(q: str, limit: int = 8) -> Dict[str, Any]:
+    return {"results": vault().vec(q, limit)}
 
-    try:
-        # Default string query forces vector search using LanceDB's embedding registry
-        results = tbl.search(query).limit(limit).to_pandas()
-        if results.empty:
-            return "No matching chats found."
-            
-        formatted = []
-        for idx, row in results.iterrows():
-            preview = row.get("text", "")[:500]
-            role = row.get("role", "unknown")
-            provider = row.get("provider", "unknown")
-            score = row.get("_distance", 0)
-            formatted.append(f"[{provider.upper()} | {role.upper()}] (score: {score:.3f}):\n{preview}...")
-            
-        return "\n\n---\n\n".join(formatted)
-    except Exception as e:
-        return f"Semantic search error: {str(e)}"
+
+@mcp.tool()
+def vault_search_hybrid(q: str, limit: int = 8) -> Dict[str, Any]:
+    return {"results": vault().hybrid(q, limit)}
+
 
 if __name__ == "__main__":
-    print("Starting Hypebrut Loom Vault MCP...")
-    mcp.run(transport="stdio")
+    mcp.run()

@@ -34,7 +34,7 @@ export class ExportSink {
     }
 
     const { downloadFile } = await import("~utils/exporter")
-    let filename = options.filename || "hypebrut-loom-export"
+    let filename = options.filename || "skein-export"
     if (options.timestamp) {
       const ts = new Date().toISOString().replace(/[:.]/g, "-")
       filename = `${filename}_${ts}`

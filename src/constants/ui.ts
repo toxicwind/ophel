@@ -16,8 +16,6 @@ import {
 } from "~components/icons"
 import { SHORTCUT_META } from "~constants/shortcuts"
 
-// ==================== Tab ID 常量 ====================
-// 用于 Tab 切换判断，避免字符串字面量拼写错误
 export const TAB_IDS = {
   PROMPTS: "prompts",
   OUTLINE: "outline",
@@ -63,7 +61,6 @@ export const APPEARANCE_TAB_IDS = {
 export const SITE_SETTINGS_TAB_IDS = {
   LAYOUT: "layout",
   MODEL_LOCK: "modelLock",
-  // 站点专属 Tab ID 直接使用 SITE_IDS
 } as const
 
 // ==================== Settings Deep Link ====================
@@ -733,7 +730,7 @@ export const SETTINGS_SEARCH_ITEMS: SettingsSearchItem[] = [
   },
   {
     settingId: "archivist-enabled",
-    title: "启用 Archivist 管道",
+    title: "Enable Archivist 管道",
     keywords: ["archivist", "pipeline", "archive", "归档"],
   },
   {
@@ -743,7 +740,7 @@ export const SETTINGS_SEARCH_ITEMS: SettingsSearchItem[] = [
   },
   {
     settingId: "archivist-selective-export",
-    title: "启用选择性导出",
+    title: "启用Selective export",
     keywords: ["archivist", "selective", "export", "选择性"],
   },
   ...SHORTCUT_SETTINGS_SEARCH_ITEMS,
@@ -823,8 +820,6 @@ export const searchSettingsItems = (query: string, limit?: number): SettingsSear
   return items
 }
 
-// ==================== Tab 定义 ====================
-// Tab 标签的显示配置
 export const TAB_DEFINITIONS: Record<
   string,
   {
@@ -843,9 +838,6 @@ export const TAB_DEFINITIONS: Record<
   [TAB_IDS.SETTINGS]: { label: "tabSettings", icon: "⚙️" },
 }
 
-// ==================== 折叠面板按钮定义 ====================
-// isPanelOnly: true 表示仅在面板折叠时显示，false 表示常显
-// IconComponent: React 组件形式的图标（优先于 icon）
 export const COLLAPSED_BUTTON_DEFS: Record<
   string,
   {
@@ -914,10 +906,7 @@ export const COLLAPSED_BUTTON_DEFS: Record<
   },
 }
 
-// ==================== Emoji 预设 ====================
-// 扩充的预设 Emoji 库 (64个)
 export const PRESET_EMOJIS = [
-  // 📂 基础文件夹
   "📁",
   "📂",
   "📥",
@@ -926,7 +915,6 @@ export const PRESET_EMOJIS = [
   "📈",
   "📉",
   "📋",
-  // 💼 办公/工作
   "💼",
   "📅",
   "📌",
@@ -935,7 +923,6 @@ export const PRESET_EMOJIS = [
   "✒️",
   "🔍",
   "💡",
-  // 💻 编程/技术
   "💻",
   "⌨️",
   "🖥️",
@@ -944,7 +931,6 @@ export const PRESET_EMOJIS = [
   "🔧",
   "🔨",
   "⚙️",
-  // 🤖 AI/机器人
   "🤖",
   "👾",
   "🧠",
@@ -953,7 +939,6 @@ export const PRESET_EMOJIS = [
   "✨",
   "🎓",
   "📚",
-  // 🎨 创意/艺术
   "🎨",
   "🎭",
   "🎬",
@@ -962,7 +947,6 @@ export const PRESET_EMOJIS = [
   "📷",
   "🖌️",
   "🖍️",
-  // 🏠 生活/日常
   "🏠",
   "🛒",
   "✈️",
@@ -971,7 +955,6 @@ export const PRESET_EMOJIS = [
   "🍔",
   "☕",
   "❤️",
-  // 🌈 颜色/标记
   "🔴",
   "🟠",
   "🟡",
@@ -980,7 +963,6 @@ export const PRESET_EMOJIS = [
   "🟣",
   "⚫",
   "⚪",
-  // 其他
   "⭐",
   "🌟",
   "🎉",
@@ -991,38 +973,31 @@ export const PRESET_EMOJIS = [
   "❓",
 ]
 
-// ==================== 标签颜色预设 ====================
-// 30 色预设网格
 export const TAG_COLORS = [
-  // 第一行
   "#FF461F",
   "#FF6B6B",
   "#FA8072",
   "#DC143C",
   "#CD5C5C",
   "#FF4500",
-  // 第二行
   "#FFA500",
   "#FFB347",
   "#F0E68C",
   "#DAA520",
   "#FFD700",
   "#9ACD32",
-  // 第三行
   "#32CD32",
   "#3CB371",
   "#20B2AA",
   "#00CED1",
   "#5F9EA0",
   "#4682B4",
-  // 第四行
   "#6495ED",
   "#4169E1",
   "#0000CD",
   "#8A2BE2",
   "#9370DB",
   "#BA55D3",
-  // 第五行
   "#DB7093",
   "#C71585",
   "#8B4513",
@@ -1031,14 +1006,12 @@ export const TAG_COLORS = [
   "#2F4F4F",
 ]
 
-// ==================== Toast 显示时长 ====================
 export const TOAST_DURATION = {
   SHORT: 1500,
   MEDIUM: 2000,
   LONG: 3000,
 } as const
 
-// ==================== 状态颜色 ====================
 export const STATUS_COLORS = {
   SUCCESS: "#10b981", // green-500
   ERROR: "#ef4444", // red-500
