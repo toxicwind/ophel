@@ -13,9 +13,13 @@ import { DoubaoAdapter } from "./doubao"
 import { GeminiAdapter } from "./gemini"
 import { GeminiEnterpriseAdapter } from "./gemini-enterprise"
 import { GrokAdapter } from "./grok"
+import { LMArenaAdapter } from "./lmarena"
+import { MetaAdapter } from "./meta"
 
 // 所有可用的适配器
 const adapters: SiteAdapter[] = [
+  new MetaAdapter(),
+  new LMArenaAdapter(),
   new GeminiEnterpriseAdapter(),
   new GeminiAdapter(),
   new ChatGPTAdapter(),
