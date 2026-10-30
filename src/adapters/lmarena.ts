@@ -1,5 +1,5 @@
 /**
- * LMArena (Chatbot Arena) Adapter — Sovereign Edition
+ * LMArena (Chatbot Arena) Adapter — Estate Edition
  *
  * Dual-slot model presets, fuzzy registry, auto-apply on route change.
  */

@@ -54,6 +54,8 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
+    "@types/bun": "^1.4.4",
+    "bun-types": "^1.4.4",
     "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^20.3.1",
     "@types/chrome": "^0.0.258",

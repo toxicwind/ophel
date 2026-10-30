@@ -1,5 +1,5 @@
 /**
- * Meta AI Adapter — Sovereign Edition
+ * Meta AI Adapter — Estate Edition
  *
  * Hardened from Ghost GENERIC_HOSTS + My Prompt platform detection.
  * Layers: ProseMirror → contenteditable → textarea → aria-label fallbacks.

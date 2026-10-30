@@ -1,6 +1,6 @@
 import { platform } from "~platform"
 
-const TAB_LOCK_KEY = "ophel:sovereign:tabLock"
+const TAB_LOCK_KEY = "ophel:estate:tabLock"
 const TAB_HEARTBEAT_INTERVAL = 3000
 const TAB_LOCK_TTL = 10000
 
